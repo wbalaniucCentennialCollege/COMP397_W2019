@@ -4,11 +4,13 @@
     Calls an anonympous self-executing function
     Anything in braces is in a closure. Won't go to global namespace.
 */
-(function () {
+(function() {
+
     function Init() {
         console.log("Initialization start");
-        var x = 10;
+
+        let x: number = 10;
     }
+
     window.onload = Init;
 })();
-//# sourceMappingURL=game.js.map
