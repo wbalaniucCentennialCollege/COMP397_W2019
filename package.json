@@ -18,5 +18,14 @@
   "homepage": "https://github.com/wbalaniucCentennialCollege/COMP397_W2019#readme",
   "devDependencies": {
     "@types/easeljs": "^1.0.0"
+  },
+  "dependencies": {
+    "@types/preloadjs": "^0.6.32",
+    "@types/soundjs": "^0.6.27",
+    "@types/tweenjs": "^1.0.0",
+    "easeljs": "^1.0.2",
+    "preloadjs": "^1.0.1",
+    "soundjs": "^1.0.1",
+    "tweenjs": "^1.0.2"
   }
 }
