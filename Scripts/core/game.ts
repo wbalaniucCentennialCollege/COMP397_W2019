@@ -20,7 +20,9 @@
     assetManifest = [                               // Array of objects. Key-value pairs
         {id: "startButton", src:"./Assets/Images/startButton.png"},
         {id: "nextButton", src:"./Assets/Images/nextButton.png"},
-        {id: "backButton", src:"./Assets/Images/backButton.png"}
+        {id: "backButton", src:"./Assets/Images/backButton.png"},
+        {id: "background", src:"./Assets/Images/SeamlessBG.png"},
+        {id: "player", src:"./Assets/Images/Spaceship.png"}
     ];
 
     function Init():void {

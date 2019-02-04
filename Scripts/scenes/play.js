@@ -23,26 +23,14 @@ var scenes;
         }
         // Methods
         PlayScene.prototype.Start = function () {
-            this.playLabel = new objects.Label("Game Playing", "40px", "Consolas", "#000000", 320, 240, true);
-            this.nextButton = new objects.Button(this.assetManager, "nextButton", 500, 340);
-            this.backButton = new objects.Button(this.assetManager, "backButton", 140, 340);
+            this.background = new objects.Background(this.assetManager);
             this.Main();
         };
         PlayScene.prototype.Update = function () {
-        };
-        // Button Even Handlers
-        PlayScene.prototype.nextButtonClick = function () {
-            objects.Game.currentScene = config.Scene.OVER;
-        };
-        PlayScene.prototype.quitButtonClick = function () {
-            objects.Game.currentScene = config.Scene.START;
+            this.background.Update();
         };
         PlayScene.prototype.Main = function () {
-            this.addChild(this.playLabel);
-            this.addChild(this.nextButton);
-            this.addChild(this.backButton);
-            this.nextButton.on("click", this.nextButtonClick);
-            this.backButton.on("click", this.quitButtonClick);
+            this.addChild(this.background);
         };
         return PlayScene;
     }(objects.Scene));
