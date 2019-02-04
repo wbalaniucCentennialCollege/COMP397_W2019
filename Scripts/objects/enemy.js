@@ -24,8 +24,8 @@ var objects;
         }
         // Method / Functions
         Enemy.prototype.Start = function () {
-            this.x = 100;
-            this.y = -50;
+            this.x = Math.floor(Math.random() * 500) + 0; // Random value between 0 and 500
+            this.y = Math.floor(Math.random() * -200) + -50;
         };
         Enemy.prototype.Update = function () {
             this.Move();
@@ -33,7 +33,7 @@ var objects;
         };
         Enemy.prototype.Reset = function () { };
         Enemy.prototype.Move = function () {
-            this.y += 2;
+            this.y += 5;
         };
         Enemy.prototype.CheckBounds = function () {
             // Check y bounds

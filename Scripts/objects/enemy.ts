@@ -8,8 +8,8 @@ module objects {
         }
         // Method / Functions
         public Start():void {
-            this.x = 100;
-            this.y = -50;
+            this.x = Math.floor(Math.random() * 500) + 0;  // Random value between 0 and 500
+            this.y = Math.floor(Math.random() * -200) + -50;
         }
         public Update():void {
             this.Move();
@@ -17,7 +17,7 @@ module objects {
         }
         public Reset():void {}
         public Move():void {
-            this.y += 2;
+            this.y += 5;
         }
         public CheckBounds():void {
             // Check y bounds

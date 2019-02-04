@@ -25,18 +25,31 @@ var scenes;
         PlayScene.prototype.Start = function () {
             this.background = new objects.Background(this.assetManager);
             this.player = new objects.Player(this.assetManager);
-            this.enemy = new objects.Enemy(this.assetManager);
+            // this.enemy = new objects.Enemy(this.assetManager);
+            this.enemies = new Array();
+            this.enemyNum = 10;
+            for (var i = 0; i < this.enemyNum; i++) {
+                this.enemies[i] = new objects.Enemy(this.assetManager);
+            }
             this.Main();
         };
         PlayScene.prototype.Update = function () {
             this.background.Update();
             this.player.Update();
-            this.enemy.Update();
+            // this.enemy.Update();
+            // For-each loop
+            this.enemies.forEach(function (enemy) {
+                enemy.Update();
+            });
         };
         PlayScene.prototype.Main = function () {
+            var _this = this;
             this.addChild(this.background);
             this.addChild(this.player);
-            this.addChild(this.enemy);
+            // this.addChild(this.enemy);
+            this.enemies.forEach(function (enemy) {
+                _this.addChild(enemy);
+            });
         };
         return PlayScene;
     }(objects.Scene));
