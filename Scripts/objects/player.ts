@@ -23,7 +23,15 @@ module objects {
         }
 
         public CheckBounds():void {
-            
+            // Check right boundary
+            if(this.x >= 600 - this.halfW) {
+                this.x = 600 - this.halfW;
+            }
+
+            // Check left boundary
+            if(this.x <= this.halfW) {
+                this.x = this.halfW;
+            }
         }
     }
 }

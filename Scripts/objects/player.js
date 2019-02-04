@@ -35,6 +35,14 @@ var objects;
             this.x = objects.Game.stage.mouseX; // objects.Game.stage is a global variable
         };
         Player.prototype.CheckBounds = function () {
+            // Check right boundary
+            if (this.x >= 600 - this.halfW) {
+                this.x = 600 - this.halfW;
+            }
+            // Check left boundary
+            if (this.x <= this.halfW) {
+                this.x = this.halfW;
+            }
         };
         return Player;
     }(objects.GameObject));
