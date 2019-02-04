@@ -24,13 +24,16 @@ var scenes;
         // Methods
         PlayScene.prototype.Start = function () {
             this.background = new objects.Background(this.assetManager);
+            this.player = new objects.Player(this.assetManager);
             this.Main();
         };
         PlayScene.prototype.Update = function () {
             this.background.Update();
+            this.player.Update();
         };
         PlayScene.prototype.Main = function () {
             this.addChild(this.background);
+            this.addChild(this.player);
         };
         return PlayScene;
     }(objects.Scene));
