@@ -23,7 +23,7 @@ module objects {
         }
 
         private Reset():void {
-            this.y = -1440;
+            this.y = -1120;
         }
 
         private Move():void {

@@ -33,7 +33,7 @@ var objects;
             this.CheckBounds();
         };
         Background.prototype.Reset = function () {
-            this.y = -1440;
+            this.y = -1120;
         };
         Background.prototype.Move = function () {
             this.y += this.speedY;
