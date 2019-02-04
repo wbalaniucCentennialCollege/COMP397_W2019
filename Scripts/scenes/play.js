@@ -25,15 +25,18 @@ var scenes;
         PlayScene.prototype.Start = function () {
             this.background = new objects.Background(this.assetManager);
             this.player = new objects.Player(this.assetManager);
+            this.enemy = new objects.Enemy(this.assetManager);
             this.Main();
         };
         PlayScene.prototype.Update = function () {
             this.background.Update();
             this.player.Update();
+            this.enemy.Update();
         };
         PlayScene.prototype.Main = function () {
             this.addChild(this.background);
             this.addChild(this.player);
+            this.addChild(this.enemy);
         };
         return PlayScene;
     }(objects.Scene));

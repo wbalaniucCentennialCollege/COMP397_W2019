@@ -18,7 +18,8 @@
         { id: "nextButton", src: "./Assets/Images/nextButton.png" },
         { id: "backButton", src: "./Assets/Images/backButton.png" },
         { id: "background", src: "./Assets/Images/SeamlessBG.png" },
-        { id: "player", src: "./Assets/Images/Spaceship.png" }
+        { id: "player", src: "./Assets/Images/Spaceship.png" },
+        { id: "enemy", src: "./Assets/Images/Enemy.png" }
     ];
     function Init() {
         console.log("Initialization start");
