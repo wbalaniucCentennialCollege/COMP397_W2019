@@ -9,7 +9,13 @@ var managers;
             var p2 = new math.Vec2(obj2.x, obj2.y);
             if (math.Vec2.Distance(p1, p2) < (obj1.halfH + obj2.halfH)) {
                 if (!obj2.isColliding) {
-                    console.log("Colliding with " + obj2.name);
+                    // console.log("Colliding with " + obj2.name);
+                    switch (obj2.name) {
+                        case "enemy":
+                            this.explodeSFX = createjs.Sound.play("explode");
+                            this.explodeSFX.volume = 0.1;
+                            break;
+                    }
                     obj2.isColliding = true;
                 }
             }

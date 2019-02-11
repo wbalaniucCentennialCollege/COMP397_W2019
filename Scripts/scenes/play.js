@@ -18,6 +18,9 @@ var scenes;
         // Constructor
         function PlayScene(assetManager) {
             var _this = _super.call(this, assetManager) || this;
+            _this.backgroundMusic = createjs.Sound.play("play_music");
+            _this.backgroundMusic.loop = -1; // Looping forever
+            _this.backgroundMusic.volume = 0.3;
             _this.Start();
             return _this;
         }

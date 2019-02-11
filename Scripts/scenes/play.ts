@@ -7,9 +7,14 @@ module scenes {
         private enemies:objects.Enemy[];
         private enemyNum:number;
 
+        private backgroundMusic:createjs.AbstractSoundInstance;
+
         // Constructor
         constructor(assetManager:createjs.LoadQueue) {
             super(assetManager);
+            this.backgroundMusic = createjs.Sound.play("play_music");
+            this.backgroundMusic.loop = -1; // Looping forever
+            this.backgroundMusic.volume = 0.3;
 
             this.Start();
         }

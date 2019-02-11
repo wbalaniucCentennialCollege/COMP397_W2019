@@ -23,7 +23,9 @@
         {id: "backButton", src:"./Assets/Images/backButton.png"},
         {id: "background", src:"./Assets/Images/SeamlessBG.png"},
         {id: "player", src:"./Assets/Images/Spaceship.png"},
-        {id: "enemy", src:"./Assets/Images/Enemy.png"}
+        {id: "enemy", src:"./Assets/Images/Enemy.png"},
+        {id: "explode", src:"./Assets/Audio/explode.wav"},
+        {id: "play_music", src:"./Assets/Audio/play_music.ogg"}
     ];
 
     function Init():void {
