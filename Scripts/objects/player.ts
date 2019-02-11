@@ -10,6 +10,7 @@ module objects {
         // Methods / functions
         public Start():void {
             this.isDead = false;
+            this.x = 300;
             this.y = 700;
         }
 
@@ -21,7 +22,15 @@ module objects {
         public Reset():void {}
 
         public Move():void {
-            this.x = objects.Game.stage.mouseX; // objects.Game.stage is a global variable
+            // this.x = objects.Game.stage.mouseX; // objects.Game.stage is a global variable
+            // Keyboard controls
+
+            if(objects.Game.keyboardManager.moveLeft) {
+                this.x -= 5;
+            }
+            if(objects.Game.keyboardManager.moveRight) {
+                this.x += 5;
+            }
         }
 
         public CheckBounds():void {

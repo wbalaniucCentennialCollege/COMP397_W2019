@@ -23,7 +23,7 @@ var objects;
         }
         // Methods / Function
         Background.prototype.Start = function () {
-            this.speedY = 5;
+            this.speedY = 1;
             this.Reset();
         };
         Background.prototype.Update = function () {

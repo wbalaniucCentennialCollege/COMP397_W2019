@@ -27,13 +27,16 @@ var scenes;
         };
         // Use start function to create objects
         StartScene.prototype.Start = function () {
-            this.welcomeLabel = new objects.Label("Welcome!", "60px", "Consolas", "#000000", 320, 240, true);
-            this.startButton = new objects.Button(this.assetManager, "startButton", 320, 300);
+            this.background = new objects.Background(this.assetManager);
+            this.welcomeLabel = new objects.Label("Welcome!", "60px", "Consolas", "#FFFFFF", 320, 240, true);
+            this.startButton = new objects.Button(this.assetManager, "startButton", 300, 450);
             this.Main();
         };
         StartScene.prototype.Update = function () {
+            this.background.Update();
         };
         StartScene.prototype.Main = function () {
+            this.addChild(this.background);
             this.addChild(this.welcomeLabel);
             this.addChild(this.startButton);
             this.startButton.on("click", this.startButtonClick);

@@ -11,7 +11,7 @@ module objects {
         }
         // Methods / Function
         public Start():void {
-            this.speedY = 5;
+            this.speedY = 1;
             this.Reset();
         }
 

@@ -24,6 +24,7 @@ var objects;
         // Methods / functions
         Player.prototype.Start = function () {
             this.isDead = false;
+            this.x = 300;
             this.y = 700;
         };
         Player.prototype.Update = function () {
@@ -32,7 +33,14 @@ var objects;
         };
         Player.prototype.Reset = function () { };
         Player.prototype.Move = function () {
-            this.x = objects.Game.stage.mouseX; // objects.Game.stage is a global variable
+            // this.x = objects.Game.stage.mouseX; // objects.Game.stage is a global variable
+            // Keyboard controls
+            if (objects.Game.keyboardManager.moveLeft) {
+                this.x -= 5;
+            }
+            if (objects.Game.keyboardManager.moveRight) {
+                this.x += 5;
+            }
         };
         Player.prototype.CheckBounds = function () {
             // Check right boundary
