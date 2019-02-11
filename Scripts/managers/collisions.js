@@ -14,13 +14,16 @@ var managers;
                         case "enemy":
                             this.explodeSFX = createjs.Sound.play("explode");
                             this.explodeSFX.volume = 0.1;
+                            objects.Game.scoreBoard.Score += 50;
                             break;
                     }
                     obj2.isColliding = true;
                 }
+                return true;
             }
             else {
                 obj2.isColliding = false;
+                return false;
             }
         };
         return Collision;

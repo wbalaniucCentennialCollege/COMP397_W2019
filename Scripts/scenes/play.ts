@@ -7,6 +7,8 @@ module scenes {
         private enemies:objects.Enemy[];
         private enemyNum:number;
 
+        private scoreBoard: managers.ScoreBoard;
+
         private backgroundMusic:createjs.AbstractSoundInstance;
 
         // Constructor
@@ -30,6 +32,11 @@ module scenes {
                 this.enemies[i] = new objects.Enemy(this.assetManager);
             }
 
+            // Initializing the scoreboard objects
+            this.scoreBoard = new managers.ScoreBoard();
+            // Make scoreboard globally accessible
+            objects.Game.scoreBoard = this.scoreBoard; 
+
             this.Main();
         }
 
@@ -41,8 +48,13 @@ module scenes {
             this.enemies.forEach(enemy => {
                 enemy.Update();
 
-                managers.Collision.Check(this.player, enemy);
-            });
+                this.player.isDead = managers.Collision.Check(this.player, enemy);
+
+                if(this.player.isDead) {
+                    this.backgroundMusic.stop();
+                    objects.Game.currentScene = config.Scene.OVER;
+                }
+            });   
         }
 
         public Main(): void {
@@ -53,6 +65,8 @@ module scenes {
             this.enemies.forEach(enemy => {
                 this.addChild(enemy);
             });
+
+            this.addChild(this.scoreBoard.scoreLabel);
         }
     }
 }

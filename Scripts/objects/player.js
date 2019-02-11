@@ -15,7 +15,6 @@ var objects;
 (function (objects) {
     var Player = /** @class */ (function (_super) {
         __extends(Player, _super);
-        // Variables
         // Constructor
         function Player(assetManager) {
             var _this = _super.call(this, assetManager, "player") || this;
@@ -24,6 +23,7 @@ var objects;
         }
         // Methods / functions
         Player.prototype.Start = function () {
+            this.isDead = false;
             this.y = 700;
         };
         Player.prototype.Update = function () {

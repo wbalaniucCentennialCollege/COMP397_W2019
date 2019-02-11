@@ -34,6 +34,10 @@ var scenes;
             for (var i = 0; i < this.enemyNum; i++) {
                 this.enemies[i] = new objects.Enemy(this.assetManager);
             }
+            // Initializing the scoreboard objects
+            this.scoreBoard = new managers.ScoreBoard();
+            // Make scoreboard globally accessible
+            objects.Game.scoreBoard = this.scoreBoard;
             this.Main();
         };
         PlayScene.prototype.Update = function () {
@@ -44,7 +48,11 @@ var scenes;
             // For-each loop
             this.enemies.forEach(function (enemy) {
                 enemy.Update();
-                managers.Collision.Check(_this.player, enemy);
+                _this.player.isDead = managers.Collision.Check(_this.player, enemy);
+                if (_this.player.isDead) {
+                    _this.backgroundMusic.stop();
+                    objects.Game.currentScene = config.Scene.OVER;
+                }
             });
         };
         PlayScene.prototype.Main = function () {
@@ -55,6 +63,7 @@ var scenes;
             this.enemies.forEach(function (enemy) {
                 _this.addChild(enemy);
             });
+            this.addChild(this.scoreBoard.scoreLabel);
         };
         return PlayScene;
     }(objects.Scene));
