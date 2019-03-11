@@ -37,7 +37,7 @@
         "animations": {
             "Explosion": {
                 "frames": [0, 3, 1, 2, 4, 5],
-                "speed": 0.5
+                "speed": 0.15
             },
             "BackButton": { "frames": [6] },
             "Spaceship": { "frames": [7] },
@@ -79,7 +79,7 @@
         Main();
     }
     function Update() {
-        console.log(managers.Game.currentScene);
+        //console.log(managers.Game.currentScene);
         if (currentState != managers.Game.currentScene) {
             console.log(managers.Game.currentScene);
             Main();

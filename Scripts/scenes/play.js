@@ -18,6 +18,7 @@ var scenes;
         // Constructor
         function PlayScene() {
             var _this = _super.call(this) || this;
+            _this.isExploding = false;
             _this.backgroundMusic = createjs.Sound.play("play_music");
             _this.backgroundMusic.loop = -1; // Looping forever
             _this.backgroundMusic.volume = 0.3;
@@ -49,9 +50,16 @@ var scenes;
             this.enemies.forEach(function (enemy) {
                 enemy.Update();
                 _this.player.isDead = managers.Collision.Check(_this.player, enemy);
-                if (_this.player.isDead) {
+                if (_this.player.isDead && !_this.isExploding) {
                     _this.backgroundMusic.stop();
-                    managers.Game.currentScene = config.Scene.OVER;
+                    // Create explosion
+                    _this.explosion = new objects.Explosion(_this.player.x, _this.player.y);
+                    _this.explosion.on("animationend", _this.handleExplosion);
+                    console.log("Creating explosion");
+                    _this.addChild(_this.explosion);
+                    _this.removeChild(_this.player);
+                    _this.isExploding = true;
+                    // managers.Game.currentScene = config.Scene.OVER;
                 }
             });
         };
@@ -64,6 +72,11 @@ var scenes;
                 _this.addChild(enemy);
             });
             this.addChild(this.scoreBoard.scoreLabel);
+        };
+        PlayScene.prototype.handleExplosion = function () {
+            this.stage.removeChild(this.explosion);
+            this.isExploding = false;
+            managers.Game.currentScene = config.Scene.OVER;
         };
         return PlayScene;
     }(objects.Scene));
