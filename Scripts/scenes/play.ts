@@ -12,8 +12,8 @@ module scenes {
         private backgroundMusic:createjs.AbstractSoundInstance;
 
         // Constructor
-        constructor(assetManager:createjs.LoadQueue) {
-            super(assetManager);
+        constructor() {
+            super();
             this.backgroundMusic = createjs.Sound.play("play_music");
             this.backgroundMusic.loop = -1; // Looping forever
             this.backgroundMusic.volume = 0.3;
@@ -22,14 +22,14 @@ module scenes {
         }
         // Methods
         public Start(): void {
-            this.background = new objects.Background(this.assetManager);
-            this.player = new objects.Player(this.assetManager);
+            this.background = new objects.Background();
+            this.player = new objects.Player();
             // this.enemy = new objects.Enemy(this.assetManager);
 
             this.enemies = new Array<objects.Enemy>();
             this.enemyNum = 10;
             for(let i = 0; i < this.enemyNum; i++) {
-                this.enemies[i] = new objects.Enemy(this.assetManager);
+                this.enemies[i] = new objects.Enemy();
             }
 
             // Initializing the scoreboard objects

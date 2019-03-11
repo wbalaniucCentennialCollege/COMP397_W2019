@@ -2,9 +2,9 @@ module objects {
     export class Button extends createjs.Bitmap {
         // Variables
         // Constructor
-        constructor(assetManager: createjs.LoadQueue, imageString:string, x:number = 0, y:number = 0) {
+        constructor(imageString:string, x:number = 0, y:number = 0) {
             // super(imageString);
-            super(assetManager.getResult(imageString));   // Actual loaded object is of type BLOB
+            super(managers.Game.assetManager.getResult(imageString));   // Actual loaded object is of type BLOB
 
             // Because image is now guarenteed to be loaded we can do the following...
             // Asset manager also returns a button object when getResult is called. 

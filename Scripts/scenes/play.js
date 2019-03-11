@@ -16,8 +16,8 @@ var scenes;
     var PlayScene = /** @class */ (function (_super) {
         __extends(PlayScene, _super);
         // Constructor
-        function PlayScene(assetManager) {
-            var _this = _super.call(this, assetManager) || this;
+        function PlayScene() {
+            var _this = _super.call(this) || this;
             _this.backgroundMusic = createjs.Sound.play("play_music");
             _this.backgroundMusic.loop = -1; // Looping forever
             _this.backgroundMusic.volume = 0.3;
@@ -26,13 +26,13 @@ var scenes;
         }
         // Methods
         PlayScene.prototype.Start = function () {
-            this.background = new objects.Background(this.assetManager);
-            this.player = new objects.Player(this.assetManager);
+            this.background = new objects.Background();
+            this.player = new objects.Player();
             // this.enemy = new objects.Enemy(this.assetManager);
             this.enemies = new Array();
             this.enemyNum = 10;
             for (var i = 0; i < this.enemyNum; i++) {
-                this.enemies[i] = new objects.Enemy(this.assetManager);
+                this.enemies[i] = new objects.Enemy();
             }
             // Initializing the scoreboard objects
             this.scoreBoard = new managers.ScoreBoard();

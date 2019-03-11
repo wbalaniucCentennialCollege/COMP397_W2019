@@ -16,8 +16,8 @@ var scenes;
     var StartScene = /** @class */ (function (_super) {
         __extends(StartScene, _super);
         // Constructors
-        function StartScene(assetManager) {
-            var _this = _super.call(this, assetManager) || this;
+        function StartScene() {
+            var _this = _super.call(this) || this;
             _this.Start();
             return _this;
         }
@@ -27,9 +27,9 @@ var scenes;
         };
         // Use start function to create objects
         StartScene.prototype.Start = function () {
-            this.background = new objects.Background(this.assetManager);
+            this.background = new objects.Background();
             this.welcomeLabel = new objects.Label("Welcome!", "60px", "Consolas", "#FFFFFF", 320, 240, true);
-            this.startButton = new objects.Button(this.assetManager, "startButton", 300, 450);
+            this.startButton = new objects.Button("startButton", 300, 450);
             this.Main();
         };
         StartScene.prototype.Update = function () {

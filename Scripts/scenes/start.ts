@@ -6,8 +6,8 @@ module scenes {
         private background: objects.Background;
 
         // Constructors
-        constructor(assetManager: createjs.LoadQueue) {
-            super(assetManager);
+        constructor() {
+            super();
 
             this.Start();
         }
@@ -18,9 +18,9 @@ module scenes {
 
         // Use start function to create objects
         public Start(): void {
-            this.background = new objects.Background(this.assetManager);
+            this.background = new objects.Background();
             this.welcomeLabel = new objects.Label("Welcome!", "60px", "Consolas", "#FFFFFF", 320, 240, true);
-            this.startButton = new objects.Button(this.assetManager, "startButton", 300, 450);
+            this.startButton = new objects.Button("startButton", 300, 450);
             this.Main();
         }
 

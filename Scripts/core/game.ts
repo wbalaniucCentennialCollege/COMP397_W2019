@@ -56,6 +56,9 @@
 
         keyboardManager = new managers.Keyboard();
         managers.Game.keyboardManager = keyboardManager;
+
+        // Setup global reference to asset manager
+        managers.Game.assetManager = assetManager;
         
         Main();
     }
