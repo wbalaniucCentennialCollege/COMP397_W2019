@@ -35,7 +35,7 @@ module scenes {
             // Initializing the scoreboard objects
             this.scoreBoard = new managers.ScoreBoard();
             // Make scoreboard globally accessible
-            objects.Game.scoreBoard = this.scoreBoard; 
+            managers.Game.scoreBoard = this.scoreBoard; 
 
             this.Main();
         }
@@ -52,7 +52,7 @@ module scenes {
 
                 if(this.player.isDead) {
                     this.backgroundMusic.stop();
-                    objects.Game.currentScene = config.Scene.OVER;
+                    managers.Game.currentScene = config.Scene.OVER;
                 }
             });   
         }

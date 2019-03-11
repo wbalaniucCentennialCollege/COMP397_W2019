@@ -23,7 +23,7 @@ var scenes;
         }
         // Methods
         StartScene.prototype.startButtonClick = function () {
-            objects.Game.currentScene = config.Scene.GAME;
+            managers.Game.currentScene = config.Scene.GAME;
         };
         // Use start function to create objects
         StartScene.prototype.Start = function () {

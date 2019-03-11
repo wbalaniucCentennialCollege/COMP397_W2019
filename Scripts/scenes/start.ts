@@ -13,7 +13,7 @@ module scenes {
         }
         // Methods
         private startButtonClick():void {
-            objects.Game.currentScene = config.Scene.GAME;
+            managers.Game.currentScene = config.Scene.GAME;
         }
 
         // Use start function to create objects

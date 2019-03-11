@@ -39,23 +39,24 @@
         stage.enableMouseOver(20); // Frequency of checks. Computationally expensive function. Checks every frame for every image. In menu, turn on. In game, turn off.
         createjs.Ticker.framerate = 60; // 60 FPS
         createjs.Ticker.on("tick", Update);
-        objects.Game.stage = stage;
-        objects.Game.currentScene = config.Scene.START;
+        managers.Game.stage = stage;
+        managers.Game.currentScene = config.Scene.START;
         currentState = config.Scene.START;
         keyboardManager = new managers.Keyboard();
-        objects.Game.keyboardManager = keyboardManager;
+        managers.Game.keyboardManager = keyboardManager;
         Main();
     }
     function Update() {
-        if (currentState != objects.Game.currentScene) {
-            console.log(objects.Game.currentScene);
+        console.log(managers.Game.currentScene);
+        if (currentState != managers.Game.currentScene) {
+            console.log(managers.Game.currentScene);
             Main();
         }
         currentScene.Update();
         stage.update();
     }
     function Main() {
-        switch (objects.Game.currentScene) {
+        switch (managers.Game.currentScene) {
             case config.Scene.START:
                 stage.removeAllChildren();
                 currentScene = new scenes.StartScene(assetManager);
@@ -72,7 +73,7 @@
                 stage.addChild(currentScene);
                 break;
         }
-        currentState = objects.Game.currentScene;
+        currentState = managers.Game.currentScene;
         stage.addChild(currentScene);
     }
     window.onload = Init;

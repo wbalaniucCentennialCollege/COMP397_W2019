@@ -35,10 +35,10 @@ var objects;
         Player.prototype.Move = function () {
             // this.x = objects.Game.stage.mouseX; // objects.Game.stage is a global variable
             // Keyboard controls
-            if (objects.Game.keyboardManager.moveLeft) {
+            if (managers.Game.keyboardManager.moveLeft) {
                 this.x -= 5;
             }
-            if (objects.Game.keyboardManager.moveRight) {
+            if (managers.Game.keyboardManager.moveRight) {
                 this.x += 5;
             }
         };

@@ -24,7 +24,7 @@ var scenes;
         // Methods
         // Button Event Handlers
         GameOverScene.prototype.backButtonClick = function () {
-            objects.Game.currentScene = config.Scene.GAME;
+            managers.Game.currentScene = config.Scene.GAME;
         };
         GameOverScene.prototype.Start = function () {
             this.gameOverLabel = new objects.Label("Game Over", "40px", "Consolas", "#000000", 320, 240, true);

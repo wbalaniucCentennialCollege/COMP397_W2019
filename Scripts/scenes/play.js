@@ -37,7 +37,7 @@ var scenes;
             // Initializing the scoreboard objects
             this.scoreBoard = new managers.ScoreBoard();
             // Make scoreboard globally accessible
-            objects.Game.scoreBoard = this.scoreBoard;
+            managers.Game.scoreBoard = this.scoreBoard;
             this.Main();
         };
         PlayScene.prototype.Update = function () {
@@ -51,7 +51,7 @@ var scenes;
                 _this.player.isDead = managers.Collision.Check(_this.player, enemy);
                 if (_this.player.isDead) {
                     _this.backgroundMusic.stop();
-                    objects.Game.currentScene = config.Scene.OVER;
+                    managers.Game.currentScene = config.Scene.OVER;
                 }
             });
         };

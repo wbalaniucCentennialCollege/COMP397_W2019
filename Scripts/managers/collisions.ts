@@ -14,7 +14,7 @@ module managers {
                         case "enemy":
                             this.explodeSFX = createjs.Sound.play("explode");
                             this.explodeSFX.volume = 0.1;
-                            objects.Game.scoreBoard.Score += 50;
+                            managers.Game.scoreBoard.Score += 50;
                         break;
                     }
                     obj2.isColliding = true;

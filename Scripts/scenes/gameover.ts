@@ -13,7 +13,7 @@ module scenes {
         // Methods
         // Button Event Handlers
         private backButtonClick():void {
-            objects.Game.currentScene = config.Scene.GAME;
+            managers.Game.currentScene = config.Scene.GAME;
         }
 
 
