@@ -23,20 +23,22 @@ var scenes;
         }
         // Methods
         // Button Event Handlers
-        GameOverScene.prototype.backButtonClick = function () {
-            managers.Game.currentScene = config.Scene.GAME;
+        GameOverScene.prototype.quitButtonClick = function () {
+            managers.Game.currentScene = config.Scene.START;
         };
         GameOverScene.prototype.Start = function () {
-            this.gameOverLabel = new objects.Label("Game Over", "40px", "Consolas", "#000000", 320, 240, true);
-            this.backButton = new objects.Button("BackButton", 320, 340);
+            this.background = new objects.Background();
+            this.gameOverLabel = new objects.Label("Game Over", "40px", "Consolas", "#FFFFFF", 320, 240, true);
+            this.quitButton = new objects.Button("QuitButton", 320, 340);
             this.Main();
         };
         GameOverScene.prototype.Update = function () {
         };
         GameOverScene.prototype.Main = function () {
+            this.addChild(this.background);
             this.addChild(this.gameOverLabel);
-            this.addChild(this.backButton);
-            this.backButton.on("click", this.backButtonClick);
+            this.addChild(this.quitButton);
+            this.quitButton.on("click", this.quitButtonClick);
         };
         return GameOverScene;
     }(objects.Scene));

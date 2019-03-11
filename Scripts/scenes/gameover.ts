@@ -1,8 +1,9 @@
 module scenes {
     export class GameOverScene extends objects.Scene {
         // Variables
+        private background: objects.Background;
         private gameOverLabel: objects.Label;
-        private backButton: objects.Button;
+        private quitButton: objects.Button;
 
         // Constructor
         constructor() {
@@ -12,25 +13,27 @@ module scenes {
         }
         // Methods
         // Button Event Handlers
-        private backButtonClick():void {
-            managers.Game.currentScene = config.Scene.GAME;
+        private quitButtonClick():void {
+            managers.Game.currentScene = config.Scene.START;
         }
 
 
         public Start():void {
-            this.gameOverLabel = new objects.Label("Game Over", "40px", "Consolas", "#000000", 320, 240, true);
-            this.backButton = new objects.Button("BackButton", 320, 340);
+            this.background = new objects.Background();
+            this.gameOverLabel = new objects.Label("Game Over", "40px", "Consolas", "#FFFFFF", 320, 240, true);
+            this.quitButton = new objects.Button("QuitButton", 320, 340);
             this.Main();
         }
 
         public Update(): void {
-
+            
         }
 
         public Main(): void {
+            this.addChild(this.background);
             this.addChild(this.gameOverLabel);
-            this.addChild(this.backButton);
-            this.backButton.on("click", this.backButtonClick);
+            this.addChild(this.quitButton);
+            this.quitButton.on("click", this.quitButtonClick);
         }
     }
 }

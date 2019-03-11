@@ -41,6 +41,12 @@ var objects;
             if (managers.Game.keyboardManager.moveRight) {
                 this.x += 5;
             }
+            if (managers.Game.keyboardManager.moveUp) {
+                this.y -= 5;
+            }
+            if (managers.Game.keyboardManager.moveDown) {
+                this.y += 5;
+            }
         };
         Player.prototype.CheckBounds = function () {
             // Check right boundary
@@ -50,6 +56,12 @@ var objects;
             // Check left boundary
             if (this.x <= this.halfW) {
                 this.x = this.halfW;
+            }
+            if (this.y >= 800 - this.halfH) {
+                this.y = 800 - this.halfH;
+            }
+            if (this.y <= 600 - this.halfH) {
+                this.y = 600 - this.halfH;
             }
         };
         return Player;
