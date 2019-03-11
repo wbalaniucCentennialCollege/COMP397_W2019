@@ -18,7 +18,8 @@
     var textureAtlas;
     textureAtlasData = {
         "images": [
-            "./Assets/Sprites/textureAtlas.png"
+            // "./Assets/Sprites/textureAtlas.png"
+            ""
         ],
         "frames": [
             [0, 0, 19, 19, 0, 0, 0],
@@ -48,13 +49,13 @@
         },
     };
     assetManifest = [
+        { id: "textureAtlas", src: "./Assets/Sprites/textureAtlas.png" },
         { id: "background", src: "./Assets/Images/SeamlessBG.png" },
         { id: "explode", src: "./Assets/Audio/explode.wav" },
         { id: "play_music", src: "./Assets/Audio/play_music.ogg" }
     ];
     function Init() {
         console.log("Initialization start");
-        textureAtlas = new createjs.SpriteSheet(textureAtlasData);
         assetManager = new createjs.LoadQueue(); // Creates the container used for the queue.
         assetManager.installPlugin(createjs.Sound); // Necessary to use sounds in our game. 
         assetManager.loadManifest(assetManifest); // Loads the manifest defined above
@@ -63,6 +64,8 @@
     }
     function Start() {
         console.log("Starting Application...");
+        textureAtlasData.images = [assetManager.getResult("textureAtlas")];
+        textureAtlas = new createjs.SpriteSheet(textureAtlasData);
         // Initialize CreateJS
         stage = new createjs.Stage(canvas);
         stage.enableMouseOver(20); // Frequency of checks. Computationally expensive function. Checks every frame for every image. In menu, turn on. In game, turn off.

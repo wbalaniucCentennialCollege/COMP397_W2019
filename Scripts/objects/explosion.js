@@ -15,7 +15,6 @@ var objects;
 (function (objects) {
     var Explosion = /** @class */ (function (_super) {
         __extends(Explosion, _super);
-        // Variables
         // Constructor
         function Explosion(x, y) {
             var _this = _super.call(this, "Explosion") || this;
@@ -23,6 +22,8 @@ var objects;
             _this.y = y;
             _this.scaleX *= 2;
             _this.scaleY *= 2;
+            _this.explosionSFX = createjs.Sound.play("explode");
+            _this.explosionSFX.volume = 1;
             return _this;
         }
         // Methods
