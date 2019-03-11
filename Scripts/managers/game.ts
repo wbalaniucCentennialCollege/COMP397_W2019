@@ -5,5 +5,6 @@ module managers {
         public static currentScene: number;
         public static scoreBoard: managers.ScoreBoard;
         public static keyboardManager: managers.Keyboard;
+        public static textureAtlas: createjs.SpriteSheet;
     }
 }

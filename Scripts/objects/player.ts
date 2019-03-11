@@ -4,7 +4,7 @@ module objects {
         public isDead:boolean;
         // Constructor
         constructor() {
-            super("player");
+            super("Spaceship");
             this.Start();
         }
         // Methods / functions

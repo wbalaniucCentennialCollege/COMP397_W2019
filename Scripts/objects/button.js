@@ -22,11 +22,7 @@ var objects;
             if (y === void 0) { y = 0; }
             var _this = 
             // super(imageString);
-            _super.call(this, managers.Game.assetManager.getResult(imageString)) || this;
-            // Because image is now guarenteed to be loaded we can do the following...
-            // Asset manager also returns a button object when getResult is called. 
-            _this.regX = _this.getBounds().width * 0.5;
-            _this.regY = _this.getBounds().height * 0.5;
+            _super.call(this, imageString) || this;
             _this.x = x;
             _this.y = y;
             // Setup event handlers
@@ -43,7 +39,7 @@ var objects;
             this.alpha = 1.0;
         };
         return Button;
-    }(createjs.Bitmap));
+    }(objects.GameObject));
     objects.Button = Button;
 })(objects || (objects = {}));
 //# sourceMappingURL=button.js.map

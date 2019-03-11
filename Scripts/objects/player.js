@@ -17,7 +17,7 @@ var objects;
         __extends(Player, _super);
         // Constructor
         function Player() {
-            var _this = _super.call(this, "player") || this;
+            var _this = _super.call(this, "Spaceship") || this;
             _this.Start();
             return _this;
         }

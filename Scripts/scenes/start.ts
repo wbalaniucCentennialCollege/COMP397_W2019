@@ -20,7 +20,7 @@ module scenes {
         public Start(): void {
             this.background = new objects.Background();
             this.welcomeLabel = new objects.Label("Welcome!", "60px", "Consolas", "#FFFFFF", 320, 240, true);
-            this.startButton = new objects.Button("startButton", 300, 450);
+            this.startButton = new objects.Button("StartButton", 300, 450);
             this.Main();
         }
 
